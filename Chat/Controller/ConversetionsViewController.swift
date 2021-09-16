@@ -7,8 +7,12 @@
 
 import UIKit
 
+private let reuseIdentifer = "ConversationCell"
+
 class ConversetionsViewController: UIViewController {
     // MARK: - Properties
+    
+    private let tableView = UITableView()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -22,11 +26,12 @@ class ConversetionsViewController: UIViewController {
         print(123)
     }
     
-    
     // MARK: - Helpers
     func configureUI() {
         view.backgroundColor = .white
+        
         configureNavigationBar()
+        configureTableView()
         
         let image = UIImage(systemName: "person.circle.fill")
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showProfile))
@@ -48,6 +53,13 @@ class ConversetionsViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         
         navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+    }
+    
+    func configureTableView() {
+        tableView.backgroundColor = .systemPink
+        
+        view.addSubview(tableView)
+        tableView.frame = view.frame
     }
 
     /*
