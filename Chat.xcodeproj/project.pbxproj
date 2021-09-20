@@ -15,6 +15,11 @@
 		21AD29F026EA3FA20024235D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21AD29EE26EA3FA20024235D /* LaunchScreen.storyboard */; };
 		21AD29FB26EA3FA20024235D /* ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AD29FA26EA3FA20024235D /* ChatTests.swift */; };
 		21AD2A0626EA3FA20024235D /* ChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AD2A0526EA3FA20024235D /* ChatUITests.swift */; };
+		B18920BA26F9173B00BB11A4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920B826F9173B00BB11A4 /* CustomTextField.swift */; };
+		B18920BB26F9173B00BB11A4 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920B926F9173B00BB11A4 /* InputContainerView.swift */; };
+		B18920C126F9177000BB11A4 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920BF26F9177000BB11A4 /* RegistrationViewController.swift */; };
+		B18920C226F9177000BB11A4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920C026F9177000BB11A4 /* LoginViewController.swift */; };
+		B18920C426F9185300BB11A4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920C326F9185300BB11A4 /* Extensions.swift */; };
 		B1C5413D26ED99FC0047D0BA /* ConversetionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5413C26ED99FC0047D0BA /* ConversetionsViewController.swift */; };
 		B239FCD8F4F90674639C41FE /* Pods_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F26AC962237091B6B7DE08B /* Pods_Chat.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +58,11 @@
 		21AD2A0726EA3FA20024235D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F26AC962237091B6B7DE08B /* Pods_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD89C6AE52ADE788AA713309 /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
+		B18920B826F9173B00BB11A4 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B18920B926F9173B00BB11A4 /* InputContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		B18920BF26F9177000BB11A4 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = Chat/Controller/Authentication/RegistrationViewController.swift; sourceTree = SOURCE_ROOT; };
+		B18920C026F9177000BB11A4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Chat/Controller/Authentication/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		B18920C326F9185300BB11A4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B1C5413C26ED99FC0047D0BA /* ConversetionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversetionsViewController.swift; sourceTree = "<group>"; };
 		B578C76265AC4005D498C431 /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,13 +167,22 @@
 				B578C76265AC4005D498C431 /* Pods-Chat.debug.xcconfig */,
 				AD89C6AE52ADE788AA713309 /* Pods-Chat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B18920BE26F9175D00BB11A4 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				B18920C026F9177000BB11A4 /* LoginViewController.swift */,
+				B18920BF26F9177000BB11A4 /* RegistrationViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		B1C5413626ECC54B0047D0BA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B18920C326F9185300BB11A4 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -178,6 +197,7 @@
 		B1C5413826ECC5820047D0BA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B18920BE26F9175D00BB11A4 /* Authentication */,
 				B1C5413C26ED99FC0047D0BA /* ConversetionsViewController.swift */,
 			);
 			path = Controller;
@@ -193,6 +213,8 @@
 		B1C5413A26ECC5880047D0BA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B18920B826F9173B00BB11A4 /* CustomTextField.swift */,
+				B18920B926F9173B00BB11A4 /* InputContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,9 +383,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				21AD29E826EA3F9E0024235D /* ViewController.swift in Sources */,
+				B18920C426F9185300BB11A4 /* Extensions.swift in Sources */,
+				B18920BB26F9173B00BB11A4 /* InputContainerView.swift in Sources */,
 				21AD29E426EA3F9E0024235D /* AppDelegate.swift in Sources */,
 				21AD29E626EA3F9E0024235D /* SceneDelegate.swift in Sources */,
+				B18920C226F9177000BB11A4 /* LoginViewController.swift in Sources */,
+				B18920C126F9177000BB11A4 /* RegistrationViewController.swift in Sources */,
 				B1C5413D26ED99FC0047D0BA /* ConversetionsViewController.swift in Sources */,
+				B18920BA26F9173B00BB11A4 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
