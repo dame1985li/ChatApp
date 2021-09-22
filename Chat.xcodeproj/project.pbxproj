@@ -20,6 +20,7 @@
 		B18920C126F9177000BB11A4 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920BF26F9177000BB11A4 /* RegistrationViewController.swift */; };
 		B18920C226F9177000BB11A4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920C026F9177000BB11A4 /* LoginViewController.swift */; };
 		B18920C426F9185300BB11A4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920C326F9185300BB11A4 /* Extensions.swift */; };
+		B18920C626F927A800BB11A4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920C526F927A800BB11A4 /* LoginViewModel.swift */; };
 		B1C5413D26ED99FC0047D0BA /* ConversetionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5413C26ED99FC0047D0BA /* ConversetionsViewController.swift */; };
 		B239FCD8F4F90674639C41FE /* Pods_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F26AC962237091B6B7DE08B /* Pods_Chat.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		B18920BF26F9177000BB11A4 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = Chat/Controller/Authentication/RegistrationViewController.swift; sourceTree = SOURCE_ROOT; };
 		B18920C026F9177000BB11A4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Chat/Controller/Authentication/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		B18920C326F9185300BB11A4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B18920C526F927A800BB11A4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B1C5413C26ED99FC0047D0BA /* ConversetionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversetionsViewController.swift; sourceTree = "<group>"; };
 		B578C76265AC4005D498C431 /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +208,7 @@
 		B1C5413926ECC5850047D0BA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B18920C526F927A800BB11A4 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				B18920C226F9177000BB11A4 /* LoginViewController.swift in Sources */,
 				B18920C126F9177000BB11A4 /* RegistrationViewController.swift in Sources */,
 				B1C5413D26ED99FC0047D0BA /* ConversetionsViewController.swift in Sources */,
+				B18920C626F927A800BB11A4 /* LoginViewModel.swift in Sources */,
 				B18920BA26F9173B00BB11A4 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
