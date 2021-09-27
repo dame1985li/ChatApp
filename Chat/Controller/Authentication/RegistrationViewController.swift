@@ -11,11 +11,14 @@ class RegistrationViewController: UIViewController {
     
     // MARK: - Properties
     
+    private let viewModel = RegistrationViewModel()
+    
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
         button.tintColor = .white
         button.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
+        button.clipsToBounds = true
         return button
     }()
     
@@ -58,7 +61,7 @@ class RegistrationViewController: UIViewController {
     
     private let alreadyHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
-        let attributedTitle = NSMutableAttributedString(string: "アカウント持っています", attributes: [.font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor.white])
+        let attributedTitle = NSMutableAttributedString(string: "アカウント持っています?", attributes: [.font: UIFont.systemFont(ofSize: 16), .foregroundColor: UIColor.white])
         
         attributedTitle.append(NSAttributedString(string: "ログイン", attributes: [.font:UIFont.boldSystemFont(ofSize: 16), .foregroundColor: UIColor.white]))
         
@@ -77,7 +80,9 @@ class RegistrationViewController: UIViewController {
     // MARK: - Selectors
     
     @objc func handleSelectPhoto() {
-        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     @objc func handleShowLogin() {
@@ -106,4 +111,24 @@ class RegistrationViewController: UIViewController {
         alreadyHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 32, paddingRight: 32)
     }
     
+    func configureNotificationObservers() {
+        
+    }
+    
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as? UIImage
+        plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        plusPhotoButton.layer.borderColor = UIColor.white.cgColor
+        plusPhotoButton.layer.borderWidth = 3.0
+        plusPhotoButton.layer.cornerRadius = 200 / 2
+        plusPhotoButton.imageView?.clipsToBounds = true
+        plusPhotoButton.imageView?.contentMode = .scaleToFill
+        
+        dismiss(animated: true, completion: nil)
+    }
 }
