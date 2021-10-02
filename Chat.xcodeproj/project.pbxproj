@@ -22,6 +22,7 @@
 		B18920C426F9185300BB11A4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920C326F9185300BB11A4 /* Extensions.swift */; };
 		B18920C626F927A800BB11A4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18920C526F927A800BB11A4 /* LoginViewModel.swift */; };
 		B1C5413D26ED99FC0047D0BA /* ConversetionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C5413C26ED99FC0047D0BA /* ConversetionsViewController.swift */; };
+		B1C8BE552702D4B30052F1C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1C8BE542702D4B30052F1C0 /* GoogleService-Info.plist */; };
 		B1CDF5F026FBB24B00FAB576 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CDF5EF26FBB24B00FAB576 /* RegistrationViewModel.swift */; };
 		B239FCD8F4F90674639C41FE /* Pods_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F26AC962237091B6B7DE08B /* Pods_Chat.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		B18920C326F9185300BB11A4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B18920C526F927A800BB11A4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B1C5413C26ED99FC0047D0BA /* ConversetionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversetionsViewController.swift; sourceTree = "<group>"; };
+		B1C8BE542702D4B30052F1C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Chat/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B1CDF5EF26FBB24B00FAB576 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		B578C76265AC4005D498C431 /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 		21AD29E226EA3F9E0024235D /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				B1C8BE542702D4B30052F1C0 /* GoogleService-Info.plist */,
 				B1C5413B26ECC58D0047D0BA /* Model */,
 				B1C5413A26ECC5880047D0BA /* View */,
 				B1C5413926ECC5850047D0BA /* ViewModel */,
@@ -345,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21AD29F026EA3FA20024235D /* LaunchScreen.storyboard in Resources */,
+				B1C8BE552702D4B30052F1C0 /* GoogleService-Info.plist in Resources */,
 				21AD29ED26EA3FA20024235D /* Assets.xcassets in Resources */,
 				21AD29EB26EA3F9E0024235D /* Main.storyboard in Resources */,
 			);
@@ -593,7 +597,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yiming.chat.Chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -613,7 +617,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yiming.chat.Chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

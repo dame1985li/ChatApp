@@ -11,7 +11,7 @@ class RegistrationViewController: UIViewController {
     
     // MARK: - Properties
     
-    private let viewModel = RegistrationViewModel()
+    private var viewModel = RegistrationViewModel()
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -56,6 +56,7 @@ class RegistrationViewController: UIViewController {
         button.backgroundColor = #colorLiteral(red: 1, green: 0.4862745098, blue: 0.4392156863, alpha: 1)
         button.setTitleColor(.white, for: .normal)
         button.setHeight(height: 50)
+        button.isEnabled = false 
         return button
     }()
     
@@ -75,9 +76,24 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        configureNotificationObservers()
     }
     
     // MARK: - Selectors
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else if sender == passwordTextField {
+            viewModel.password = sender.text
+        } else if sender == fullnameTextField {
+            viewModel.fullname = sender.text
+        } else if sender == usernameTextField {
+            viewModel.username = sender.text
+        }
+        
+        checkFormStatus()
+    }
     
     @objc func handleSelectPhoto() {
         let imagePickerController = UIImagePickerController()
@@ -112,7 +128,11 @@ class RegistrationViewController: UIViewController {
     }
     
     func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
 }
@@ -130,5 +150,17 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
         plusPhotoButton.imageView?.contentMode = .scaleToFill
         
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension RegistrationViewController : AuthenticationControllerProtocol {
+    func checkFormStatus() {
+        if viewModel.formIsValid {
+            signUpButton.isEnabled = true
+            signUpButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        } else {
+            signUpButton.isEnabled = false
+            signUpButton.backgroundColor = #colorLiteral(red: 1, green: 0.4862745098, blue: 0.4392156863, alpha: 1)
+        }
     }
 }
